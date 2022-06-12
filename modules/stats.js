@@ -6,6 +6,14 @@ export class Stats {
         this.stat = 0;
     }
 
+    getStat() {
+        return this.stat;
+    }
+
+    setStat(stat) {
+        this.stat = stat;
+    }
+
     reset() {
         this.stat = 0;
         this.displaySelector.textContent = this.stat;
