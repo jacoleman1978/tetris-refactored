@@ -15,13 +15,13 @@ class Scores extends Stats {
             scoreArr[1].displaySelector.textContent = highestScore.stat;
         }
     }
-    update(rowsClearedThisMove, level, currentScore, highestScore, scoreArr) {
-        // The score for rows cleared depends on the number of rows cleared that move, and the level
+    update(linesClearedThisMove, level, currentScore, highestScore, scoreArr) {
+        // The score for lines cleared depends on the number of rows cleared that move, and the level
         // 1 line = 100 + 5 / level
         // 2 lines = 220 + 10 / level
         // 3 lines = 360 + 15 / level
         // 4 lines = 520 + 20 / level
-        this.stat += parseInt(100 * rowsClearedThisMove * (1 + (rowsClearedThisMove - 1) * 0.1 + 0.05 * level.stat));
+        this.stat += parseInt(100 * linesClearedThisMove * (1 + (linesClearedThisMove - 1) * 0.1 + 0.05 * level.stat));
         currentScore.stat = this.stat;
         this.displaySelector.textContent = this.stat;
         this.setHighestScore(currentScore, highestScore, scoreArr);

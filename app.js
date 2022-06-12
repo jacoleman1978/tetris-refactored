@@ -1,4 +1,4 @@
-import { LineStats } from "./modules/lineStats.js";
+import {oneLineCleared, twoLinesCleared, threeLinesCleared, fourLinesCleared, totalLinesCleared, level, lineArr} from './modules/initializeLineStats.js'
 
 //Keeps track of the starting and current fall rate of the shape (1 square in # of milliseconds)
 const fallInterval = {         
@@ -6,12 +6,9 @@ const fallInterval = {
     current: 800
 }
 
-const level = new LineStats('level');
-level.setStat(1);
-
-const oneRowCleared = new LineStats('oneRow');
-const totalRowsCleared = new LineStats('total');
-
-oneRowCleared.update(1, level, totalRowsCleared, fallInterval)
-
-totalRowsCleared.update(1, level, totalRowsCleared, fallInterval)
+twoLinesCleared.update(3, level, totalLinesCleared, fallInterval)
+totalLinesCleared.setStat(totalLinesCleared.getStat() + 6);
+threeLinesCleared.update(2, level, totalLinesCleared, fallInterval)
+totalLinesCleared.setStat(totalLinesCleared.getStat() + 6);
+fourLinesCleared.update(1, level, totalLinesCleared, fallInterval)
+totalLinesCleared.setStat(totalLinesCleared.getStat() + 4)
