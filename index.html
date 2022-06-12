@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/67296da198.js" crossorigin="anonymous"></script>
+    <script type="module" src="app.js" defer></script>
+    <title>Tetris</title>
+</head>
+<body>
+    <header>
+        <div class="buttons">
+            <button id="newGame">New Game</button>
+            <button id="instructions">Instructions</button>
+            <button id="play-pause">Play / Pause</button>
+        </div>
+        <div class="scoreBanner">
+            <div>High Score: <span id="highScore"></span></div>
+            <div>Current Score: <span id="currentScore"></span></div>
+            <div>Level: <span id="level"></span></div>
+        </div>
+        <div class="statsBanner">
+            <div id="shapeStats"></div>
+            <div id="lineStats">
+                <div class="linesText">1 Line: <span id="oneRow"></span></div>
+                <div class="linesText">2 Lines: <span id="twoRow"></span></div>
+                <div class="linesText">3 Lines: <span id="threeRow"></span></div>
+                <div class="linesText">Tetris: <span id="tetris"></span></div>
+                <div class="linesText">Total: <span id="total"></span></div>
+            </div>
+        </div>
+    </header>
+    <aside>
+        <button id="rotateCCW" class="oval"><i class="fas fa-undo"></i></button>
+        <button id="moveLeft" class="oval"><i class="fas fa-arrow-left"></i></button>
+    </aside>
+    <main class="gameArea">
+        <div id="gameGrid"></div>
+    </main>
+    <aside>
+        <button id="rotateCW" class="oval"><i class="fas fa-redo"></i></button>
+        <button id="moveRight" class="oval"><i class="fas fa-arrow-right"></i></button>
+    </aside>
+    <div id="pauseModal" class="modal">
+        <div class="pauseModalContent modal-content">
+            <div class="modalHeader">
+                <h1>Paused</h1>
+                <span class="pauseModalClose close">&times;</span>
+            </div>
+            <div class="image"><img src="./assets/wm-pause.svg" alt="Pause button image"></img></div>
+        </div>
+    </div>
+    <div id="instructionModal" class="modal">
+        <div class="instructionModalContent modal-content">
+            <div class="modalHeader">
+                <h1>About the game</h1>
+                <span class="instructionModalClose close">&times;</span>
+            </div>
+            <h4>Rotating the shapes clockwise or counterclockwise:</h4>
+            <p>
+                There are 7 different possible shapes that can be made using four squares. 
+                Most of these shapes can be rotated in up to four different orientations using the 'D' and 'F' keys on the keyboard or the curved arrow buttons on the side of the game grid area. 
+            </p>
+            <h4>Moving the shapes left or right:</h4>
+            <p>
+                The shapes will appear at the top of the game grid area and fall. 
+                You can move the shape left or right using the arrow keys on the keyboard or the arrow bottons on the side of the game grid area.
+            </p>
+            
+        </div>
+    </div>
+    <div id="gameOverModal" class="modal">
+        <div class="gameOverModalContent modal-content">
+            <div class="modalHeader">
+                <h1>Game Over</h1>
+                <span class="gameOverModalClose close">&times;</span>
+            </div>
+            <div class="gameOverText">Your score: <span id="gameScore"></span></div>
+            <div class="gameOverText">The current high score: <span id="userHighScore"></span></div>
+            <div class="gameOverText">Your level: <span id="gameMaxLevel"></span></div>
+            <div class="gameOverText">Your total lines cleared: <span id="gameTotalLines"></span></div>
+        </div>
+    </div>
+</body>
+</html>
