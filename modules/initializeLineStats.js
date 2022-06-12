@@ -15,7 +15,7 @@ const levelIndex = lineArr.length - 1;
 
 lineArr.forEach((item, index) => {
     if (index === levelIndex) {
-        item.setStat(1)
+        item.setStat(1);
     } else {
         item.setStat(0);
     }
