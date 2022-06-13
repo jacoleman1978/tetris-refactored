@@ -1,7 +1,7 @@
-import {gameSettings as game} from './gameSettings.js';
+import {gameSettings as game} from '../gameAreaSetup/gameSettings.js';
 import {scoreStatSettings as score} from '../statsAreaSetup/initializeScoreStats.js';
 import {lineStatSettings as lines} from '../statsAreaSetup/initializeLineStats.js';
-import {gridSettings as grid} from './gridSettings.js';
+import {gridSettings as grid} from '../gameAreaSetup/gridSettings.js';
 import {shapeStatSettings as shapes} from '../statsAreaSetup/initializeShapeStats.js';
 
 // Ends the game
@@ -25,7 +25,7 @@ export const gameOver = () => {
     }
     shapes.generated = 1;
     lines.array.forEach(item => {item.setStat(0)});
-    game.level.setStat(1);
+    lines.level.setStat(1);
     score.current.setStat(0);
     shapes.array.forEach(item => {item.setStat(0)});
 }
