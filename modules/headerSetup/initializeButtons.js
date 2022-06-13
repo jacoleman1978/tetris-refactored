@@ -2,10 +2,10 @@ import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
 import { modalSettings as modal } from '../modalsSetup/modalSettings.js';
 import { resetGame } from '../gameAreaCleanup/resetGame.js';
 import { buttonControls } from '../gameControls/initializeBtnControls.js';
+import { playGame } from '../gameActions/playGame.js';
 
 export const initializeHeaderButtons = () => {
     // Create newGame button in score banner that will reset all stats and the board
-    // TODO: playgame()
     let newGameButton = document.querySelector('#new-game');
     newGameButton.addEventListener('click', () => {
         newGameButton.blur();
@@ -16,7 +16,6 @@ export const initializeHeaderButtons = () => {
     })
 
     // Create play/pause button in score banner, toggling game.pauseFlag
-    // TODO: playgame()
     let playPauseButton = document.querySelector('#play-pause');
     playPauseButton.addEventListener('click', (event) => {
         if (game.pauseFlag) {

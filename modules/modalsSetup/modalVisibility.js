@@ -2,6 +2,7 @@ import { modalSettings as modal } from './modalSettings.js';
 import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
 import { buttonControls } from '../gameControls/initializeBtnControls.js';
+import { playGame } from '../gameActions/playGame.js';
 
 // Display modal
 export const showModal = (modalSelector, modalCloseSelector, pause = false) => {
@@ -14,7 +15,6 @@ export const showModal = (modalSelector, modalCloseSelector, pause = false) => {
 }
 
 // Hide modal
-// TODO: playGame function
 export const hideModal = (modalSelector, pause) => {
     modalSelector.style.display = "none";
     if (pause == true && game.gameOver == false) {
