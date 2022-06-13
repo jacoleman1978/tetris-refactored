@@ -12,51 +12,51 @@
 <body>
     <header>
         <div class="buttons">
-            <button id="newGame">New Game</button>
+            <button id="new-game">New Game</button>
             <button id="instructions">Instructions</button>
             <button id="play-pause">Play / Pause</button>
         </div>
-        <div class="scoreBanner">
-            <div>High Score: <span id="highScore"></span></div>
-            <div>Current Score: <span id="currentScore"></span></div>
+        <div class="score-banner">
+            <div>High Score: <span id="high-score"></span></div>
+            <div>Current Score: <span id="current-score"></span></div>
             <div>Level: <span id="level"></span></div>
         </div>
-        <div class="statsBanner">
-            <div id="shapeStats"></div>
-            <div id="lineStats">
-                <div class="linesText">1 Line: <span id="oneRow"></span></div>
-                <div class="linesText">2 Lines: <span id="twoRow"></span></div>
-                <div class="linesText">3 Lines: <span id="threeRow"></span></div>
-                <div class="linesText">Tetris: <span id="tetris"></span></div>
-                <div class="linesText">Total: <span id="total"></span></div>
+        <div class="stats-banner">
+            <div id="shape-stats"></div>
+            <div id="line-stats">
+                <div class="lines-text">1 Line: <span id="one-line"></span></div>
+                <div class="lines-text">2 Lines: <span id="two-line"></span></div>
+                <div class="lines-text">3 Lines: <span id="three-line"></span></div>
+                <div class="lines-text">Tetris: <span id="tetris"></span></div>
+                <div class="lines-text">Total: <span id="total"></span></div>
             </div>
         </div>
     </header>
     <aside>
-        <button id="rotateCCW" class="oval"><i class="fas fa-undo"></i></button>
-        <button id="moveLeft" class="oval"><i class="fas fa-arrow-left"></i></button>
+        <button id="rotate-CCW" class="oval"><i class="fas fa-undo"></i></button>
+        <button id="move-left" class="oval"><i class="fas fa-arrow-left"></i></button>
     </aside>
-    <main class="gameArea">
-        <div id="gameGrid"></div>
+    <main class="game-area">
+        <div id="game-grid"></div>
     </main>
     <aside>
-        <button id="rotateCW" class="oval"><i class="fas fa-redo"></i></button>
-        <button id="moveRight" class="oval"><i class="fas fa-arrow-right"></i></button>
+        <button id="rotate-CW" class="oval"><i class="fas fa-redo"></i></button>
+        <button id="move-right" class="oval"><i class="fas fa-arrow-right"></i></button>
     </aside>
-    <div id="pauseModal" class="modal">
-        <div class="pauseModalContent modal-content">
-            <div class="modalHeader">
+    <div id="pause-modal" class="modal">
+        <div class="pause-modal-content modal-content">
+            <div class="modal-header">
                 <h1>Paused</h1>
-                <span class="pauseModalClose close">&times;</span>
+                <span class="pause-modal-close close">&times;</span>
             </div>
             <div class="image"><img src="./assets/wm-pause.svg" alt="Pause button image"></img></div>
         </div>
     </div>
-    <div id="instructionModal" class="modal">
-        <div class="instructionModalContent modal-content">
-            <div class="modalHeader">
+    <div id="instruction-modal" class="modal">
+        <div class="instruction-modal-content modal-content">
+            <div class="modal-header">
                 <h1>About the game</h1>
-                <span class="instructionModalClose close">&times;</span>
+                <span class="instruction-modal-close close">&times;</span>
             </div>
             <h4>Rotating the shapes clockwise or counterclockwise:</h4>
             <p>
@@ -71,16 +71,16 @@
             
         </div>
     </div>
-    <div id="gameOverModal" class="modal">
-        <div class="gameOverModalContent modal-content">
-            <div class="modalHeader">
+    <div id="game-over-modal" class="modal">
+        <div class="game-over-modal-content modal-content">
+            <div class="modal-header">
                 <h1>Game Over</h1>
-                <span class="gameOverModalClose close">&times;</span>
+                <span class="game-over-modal-close close">&times;</span>
             </div>
-            <div class="gameOverText">Your score: <span id="gameScore"></span></div>
-            <div class="gameOverText">The current high score: <span id="userHighScore"></span></div>
-            <div class="gameOverText">Your level: <span id="gameMaxLevel"></span></div>
-            <div class="gameOverText">Your total lines cleared: <span id="gameTotalLines"></span></div>
+            <div class="game-over-text">Your score: <span id="game-score"></span></div>
+            <div class="game-over-text">The current high score: <span id="user-high-score"></span></div>
+            <div class="game-over-text">Your level: <span id="game-max-level"></span></div>
+            <div class="game-over-text">Your total lines cleared: <span id="game-total-lines"></span></div>
         </div>
     </div>
 </body>

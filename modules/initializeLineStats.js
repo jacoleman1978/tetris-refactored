@@ -1,9 +1,9 @@
 import { LineStats } from "./lineStats.js";
 
 // Initialize all LineStat class objects
-const oneLineCleared = new LineStats('oneRow');
-const twoLinesCleared = new LineStats('twoRow');
-const threeLinesCleared = new LineStats('threeRow');
+const oneLineCleared = new LineStats('one-line');
+const twoLinesCleared = new LineStats('two-line');
+const threeLinesCleared = new LineStats('three-line');
 const fourLinesCleared = new LineStats('tetris');
 const totalLinesCleared = new LineStats('total');
 const level = new LineStats('level');
