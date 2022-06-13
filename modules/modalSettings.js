@@ -1,4 +1,4 @@
-const modalSelectors = {
+const modalSettings = {
     modalSelector: document.querySelector("#pause-modal"),
     modalContentSelector: document.querySelector(".pause-modal-content"),
     instructionModalSelector: document.querySelector("#instruction-modal"),
@@ -7,4 +7,4 @@ const modalSelectors = {
     gameOverContentSelector: document.querySelector(".game-over-modal-content")
 };
 
-export {modalSelectors};
+export {modalSettings};
