@@ -21,7 +21,7 @@ export const initializeHeaderButtons = () => {
     playPauseButton.addEventListener('click', (event) => {
         if (game.pauseFlag) {
             playPauseButton.blur();
-            buttonControls.array.forEach(selector => {selector.disabled = false});
+            buttonControls.forEach(selector => {selector.disabled = false});
             //document.addEventListener('keydown', keyListeners)
             clearInterval(game.gravity);
             game.gravity = setInterval(playGame, game.fallInterval.current);
@@ -29,7 +29,7 @@ export const initializeHeaderButtons = () => {
         }
         else {
             clearInterval(game.gravity);
-            buttonControls.array.forEach(selector => {selector.disabled = true});
+            buttonControls.forEach(selector => {selector.disabled = true});
             //document.removeEventListener('keydown', keyListeners)
             game.pauseFlag = true;
             showModal(modal.pause, document.querySelector(".pause-modal-close"), true);

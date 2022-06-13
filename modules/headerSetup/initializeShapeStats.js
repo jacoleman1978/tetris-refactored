@@ -16,13 +16,6 @@ const shapeStatArr = [lineShapeStats, lShapeStats, revLShapeStats, tShapeStats, 
 shapeStatArr.forEach(item => {item.initialize()});
 
 const shapeStatSettings = {
-    line: lineShapeStats,
-    l: lShapeStats,
-    revL: revLShapeStats,
-    t: tShapeStats,
-    s: sShapeStats,
-    revS: revSShapeStats,
-    square: squareShapeStats,
     array: shapeStatArr,
     generated: 1
 }

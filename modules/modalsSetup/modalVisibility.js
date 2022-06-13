@@ -18,7 +18,7 @@ export const showModal = (modalSelector, modalCloseSelector, pause = false) => {
 export const hideModal = (modalSelector, pause) => {
     modalSelector.style.display = "none";
     if (pause == true && game.gameOver == false) {
-        buttonControls.array.forEach(selector => {selector.disabled = false});
+        buttonControls.forEach(selector => {selector.disabled = false});
         clearInterval(game.gravity);
         game.gravity = setInterval(playGame, game.fallInterval.current);
         game.pauseFlag = false;

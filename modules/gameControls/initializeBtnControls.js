@@ -34,10 +34,4 @@ rotateCCWButton.addEventListener('click', () => {
 // Listeners to use keys to control shape actions
 document.addEventListener('keydown', keyListeners);
 
-export const buttonControls = {
-    left: moveLeftButton,
-    right: moveRightButton,
-    rotateCW: rotateCWButton,
-    rotateCCW: rotateCCWButton,
-    array: [moveLeftButton, moveRightButton, rotateCWButton, rotateCCWButton]
-}
+export const buttonControls = [moveLeftButton, moveRightButton, rotateCWButton, rotateCCWButton];

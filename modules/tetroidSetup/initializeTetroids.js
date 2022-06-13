@@ -10,13 +10,6 @@ const revSShape = new Tetroid(5, 'darksalmon', [1, 2, 12, 13], [2, 11, 12, 21], 
 const squareShape = new Tetroid(6, 'greenyellow', [1, 2, 11, 12], [1, 2, 11, 12], [1, 2, 11, 12], [1, 2, 11, 12]);
 
 export const tetroidTemplates = {
-    line: lineShape,
-    l: lShape,
-    revL: revLShape,
-    t: tShape,
-    s: sShape,
-    revS: revSShape,
-    square: squareShape,
     array: [lineShape, lShape, revLShape, tShape, sShape, revSShape, squareShape],
     curTemplateId: ''
 }
