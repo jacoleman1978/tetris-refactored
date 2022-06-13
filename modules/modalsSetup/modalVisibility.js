@@ -5,7 +5,7 @@ import { gameSettings as game } from "../gameAreaSetup/gameSettings.js";
 // Display modal
 export const showModal = (modalSelector, modalCloseSelector, pause = false) => {
     modalSelector.style.display = "block";
-    modal.modalContentSelector.style.height = grid.gridHeight;
+    modal.pauseContent.style.height = grid.gridHeight;
     window.onclick = function(event) {
         if (event.target == modalSelector) hideModal(modalSelector);
     }
