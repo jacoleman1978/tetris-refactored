@@ -1,4 +1,4 @@
-const gameSettings = {
+export const gameSettings = {
     // Fall rate of the shape (1 square in # of milliseconds)
     fallInterval: {
         initial: 800,       

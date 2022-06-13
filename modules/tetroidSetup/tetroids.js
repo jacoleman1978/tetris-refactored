@@ -126,3 +126,5 @@ class Tetroid {
         })
     }
 }
+
+export {Tetroid};
