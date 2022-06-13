@@ -36,14 +36,14 @@ const adjustTileSize = () => {
         gridSettings.tileDimension = adjustTileWidth;
     }
     else {
-        adjustTileHeight = (screenHeight - 175) / gridSettings.tilesHigh;
+        let adjustTileHeight = (screenHeight - 175) / gridSettings.tilesHigh;
         gridSettings.tileDimension = adjustTileHeight;
     }
-    gridSettings.gridSelector = document.querySelector('#gameGrid');
+    gridSettings.gridSelector = document.querySelector('#game-grid');
     gridSettings.gridWidth = (gridSettings.tilesWide * gridSettings.tileDimension + 2 * gridSettings.tilesWide) + 'px';
     gridSettings.gridHeight = (gridSettings.tilesHigh * gridSettings.tileDimension + 2 * gridSettings.tilesHigh) + 'px';
-    modalSettings.gridSelector.style.width = gridSettings.gridWidth;
-    modalSettings.gridSelector.style.height = gridSettings.gridHeight;
+    gridSettings.gridSelector.style.width = gridSettings.gridWidth;
+    gridSettings.gridSelector.style.height = gridSettings.gridHeight;
     modalSettings.modalSelector.style.height = gridSettings.gridWidth;
     modalSettings.instructionModalSelector.style.height = gridSettings.gridHeight;
     modalSettings.modalSelector.style.paddingLeft = (screenWidth - gridSettings.tilesWide * gridSettings.tileDimension + 2 * gridSettings.tilesWide) / 2

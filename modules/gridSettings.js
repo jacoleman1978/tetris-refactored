@@ -7,4 +7,5 @@ export const gridSettings = {
     gridSelector: '',       // DOM selector for the game grid
     tileArr: [],            // Holds DOM selectors for each tile
     isScreenSmaller: false, //Flag to determine if the small screen breakpoint was reached
+    filledSqInRow: [],      //Keeps track of how many squares are filled in each row
 }
