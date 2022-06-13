@@ -1,5 +1,5 @@
 import {gridSettings as grid} from '../gameAreaSetup/gridSettings.js';
-import {gameOver} from '../gameAreaCleanup/gameOver';
+import {gameOver} from '../gameAreaCleanup/gameOver.js';
 
 // Class for each individual tetroid shape and rotational orientation
 // There is a maximum of 4 rotational orientations for each shape, so each shape needs 4 versions passed in

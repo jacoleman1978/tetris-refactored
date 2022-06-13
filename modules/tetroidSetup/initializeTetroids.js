@@ -1,3 +1,5 @@
+import { Tetroid } from "./tetroids.js";
+
 // Instantiate all members of Tetroid class
 const lineShape = new Tetroid(0, 'blue', [0, 1, 2, 3], [2, 12, 22, 32], [0, 1, 2, 3], [2, 12, 22, 32]);
 const lShape = new Tetroid(1, 'green', [3, 11, 12, 13], [1, 11, 21, 22], [11, 12, 13, 21], [1, 2, 12, 22]);
