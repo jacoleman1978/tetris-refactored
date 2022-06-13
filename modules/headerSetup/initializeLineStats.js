@@ -18,6 +18,11 @@ lineArr.forEach((item) => {
 level.setStat(1);
 
 export const lineStatSettings = {
+    one: oneLineCleared,
+    two: twoLinesCleared,
+    three: threeLinesCleared,
+    four: fourLinesCleared,
+    total: totalLinesCleared,
     array: lineArr,
     level: level
 }
