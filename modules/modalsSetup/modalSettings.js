@@ -11,12 +11,12 @@ const gameOverSelector = document.querySelector("#game-over-modal")
 const gameOverContentSelector = document.querySelector(".game-over-modal-content")
 
 const modalSettings = {
-    modalSelector: modalSelector,
-    modalContentSelector: modalContentSelector,
-    instructionModalSelector: instructionModalSelector,
-    instructionModalContent: instructionModalContent,
-    gameOverSelector: gameOverSelector,
-    gameOverContentSelector: gameOverContentSelector,
+    pause: modalSelector,
+    pauseContent: modalContentSelector,
+    instruction: instructionModalSelector,
+    instructionContent: instructionModalContent,
+    gameOver: gameOverSelector,
+    gameOverContent: gameOverContentSelector,
 };
 
 export {modalSettings};

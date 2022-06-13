@@ -17,7 +17,7 @@ const adjustTileSize = () => {
         shapeStats.style.paddingBottom = "5px";
         shapeStats.style.marginBottom = "5px"
         adjustTileWidth = (screenWidth - 175) / grid.tilesWide;
-        modal.modalSelector.style.paddingTop = "150px";
+        modal.pause.style.paddingTop = "150px";
     }
     else {
         grid.isScreenSmaller = false;
@@ -25,9 +25,9 @@ const adjustTileSize = () => {
         shapeStats.style.borderRight = "black 1px solid";
         shapeStats.style.borderBottom = "none";
         adjustTileWidth = (screenWidth - 175) / grid.tilesWide;
-        modal.modalSelector.style.paddingTop = "100px";
-        modal.modalSelector.style.height = grid.gridWidth;
-        modal.instructionModalSelector.style.height = grid.gridHeight;
+        modal.pause.style.paddingTop = "100px";
+        modal.pause.style.height = grid.gridWidth;
+        modal.instruction.style.height = grid.gridHeight;
     }
     
     //Checks to determine best tileDimension
@@ -44,9 +44,9 @@ const adjustTileSize = () => {
     grid.gridHeight = (grid.tilesHigh * grid.tileDimension + 2 * grid.tilesHigh) + 'px';
     grid.gridSelector.style.width = grid.gridWidth;
     grid.gridSelector.style.height = grid.gridHeight;
-    modal.modalSelector.style.height = grid.gridWidth;
-    modal.instructionModalSelector.style.height = grid.gridHeight;
-    modal.modalSelector.style.paddingLeft = (screenWidth - grid.tilesWide * grid.tileDimension + 2 * grid.tilesWide) / 2
+    modal.pause.style.height = grid.gridWidth;
+    modal.instruction.style.height = grid.gridHeight;
+    modal.pause.style.paddingLeft = (screenWidth - grid.tilesWide * grid.tileDimension + 2 * grid.tilesWide) / 2
 }
 
 export {adjustTileSize};

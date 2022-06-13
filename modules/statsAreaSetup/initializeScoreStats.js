@@ -19,8 +19,8 @@ if (localStorage.getItem("high-score") != null) {
 }
 
 const scoreStatSettings = {
-    currentScore: currentScore,
-    highestScore: highestScore
+    current: currentScore,
+    highest: highestScore
 }
 
 export {scoreStatSettings};
