@@ -1,6 +1,7 @@
 import {moveLeft} from './moveLeft.js';
 import {moveRight} from './moveRight.js';
 import {rotate} from './rotate.js';
+import {keyListeners} from './keyListeners.js';
 
 // Left button listener
 let moveLeftButton = document.querySelector('#move-left');
@@ -29,6 +30,9 @@ rotateCCWButton.addEventListener('click', () => {
     rotateCCWButton.blur();
     rotate("CCW");
 })
+
+// Listeners to use keys to control shape actions
+document.addEventListener('keydown', keyListeners);
 
 export const buttonControls = {
     left: moveLeftButton,

@@ -1,8 +1,8 @@
 import {gameSettings as game} from '../gameAreaSetup/gameSettings.js';
-import {scoreStatSettings as score} from '../statsAreaSetup/initializeScoreStats.js';
-import {lineStatSettings as lines} from '../statsAreaSetup/initializeLineStats.js';
+import {scoreStatSettings as score} from '../headerSetup/initializeScoreStats.js';
+import {lineStatSettings as lines} from '../headerSetup/initializeLineStats.js';
 import {gridSettings as grid} from '../gameAreaSetup/gridSettings.js';
-import {shapeStatSettings as shapes} from '../statsAreaSetup/initializeShapeStats.js';
+import {shapeStatSettings as shapes} from '../headerSetup/initializeShapeStats.js';
 
 export const resetGame = () => {
     if (localStorage.getItem("highScore") != null) {
