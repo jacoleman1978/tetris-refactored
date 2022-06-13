@@ -1,5 +1,5 @@
 import { gridSettings } from "./gridSettings.js";
-import { modalSettings } from "./modalSettings.js";
+import { modalSettings } from "../modalsSetup/modalSettings.js";
 
 // Calculates and sets the width and height of playable area in px, including tile borders using the game object
 const adjustTileSize = () => {
