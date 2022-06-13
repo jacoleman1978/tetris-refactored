@@ -1,5 +1,5 @@
-import { gridSettings } from "./gridSettings.js";
-import { modalSettings } from "../modalsSetup/modalSettings.js";
+import { gridSettings as grid} from "./gridSettings.js";
+import { modalSettings as modal} from "../modalsSetup/modalSettings.js";
 
 // Calculates and sets the width and height of playable area in px, including tile borders using the game object
 const adjustTileSize = () => {
@@ -10,43 +10,43 @@ const adjustTileSize = () => {
     let adjustTileWidth = 0;
 
     if (screenWidth < 650) {
-        gridSettings.isScreenSmaller = true;
+        grid.isScreenSmaller = true;
         statsBanner.style.flexDirection = "column";
         shapeStats.style.borderRight = "none";
         shapeStats.style.borderBottom = "black 1px solid";
         shapeStats.style.paddingBottom = "5px";
         shapeStats.style.marginBottom = "5px"
-        adjustTileWidth = (screenWidth - 175) / gridSettings.tilesWide;
-        modalSettings.modalSelector.style.paddingTop = "150px";
+        adjustTileWidth = (screenWidth - 175) / grid.tilesWide;
+        modal.modalSelector.style.paddingTop = "150px";
     }
     else {
-        gridSettings.isScreenSmaller = false;
+        grid.isScreenSmaller = false;
         statsBanner.style.flexDirection = "row";
         shapeStats.style.borderRight = "black 1px solid";
         shapeStats.style.borderBottom = "none";
-        adjustTileWidth = (screenWidth - 175) / gridSettings.tilesWide;
-        modalSettings.modalSelector.style.paddingTop = "100px";
-        modalSettings.modalSelector.style.height = gridSettings.gridWidth;
-        modalSettings.instructionModalSelector.style.height = gridSettings.gridHeight;
+        adjustTileWidth = (screenWidth - 175) / grid.tilesWide;
+        modal.modalSelector.style.paddingTop = "100px";
+        modal.modalSelector.style.height = grid.gridWidth;
+        modal.instructionModalSelector.style.height = grid.gridHeight;
     }
     
     //Checks to determine best tileDimension
     let checkTileHeight = adjustTileWidth * 15 + 150;
     if (checkTileHeight < screenHeight) {
-        gridSettings.tileDimension = adjustTileWidth;
+        grid.tileDimension = adjustTileWidth;
     }
     else {
-        let adjustTileHeight = (screenHeight - 175) / gridSettings.tilesHigh;
-        gridSettings.tileDimension = adjustTileHeight;
+        let adjustTileHeight = (screenHeight - 175) / grid.tilesHigh;
+        grid.tileDimension = adjustTileHeight;
     }
-    gridSettings.gridSelector = document.querySelector('#game-grid');
-    gridSettings.gridWidth = (gridSettings.tilesWide * gridSettings.tileDimension + 2 * gridSettings.tilesWide) + 'px';
-    gridSettings.gridHeight = (gridSettings.tilesHigh * gridSettings.tileDimension + 2 * gridSettings.tilesHigh) + 'px';
-    gridSettings.gridSelector.style.width = gridSettings.gridWidth;
-    gridSettings.gridSelector.style.height = gridSettings.gridHeight;
-    modalSettings.modalSelector.style.height = gridSettings.gridWidth;
-    modalSettings.instructionModalSelector.style.height = gridSettings.gridHeight;
-    modalSettings.modalSelector.style.paddingLeft = (screenWidth - gridSettings.tilesWide * gridSettings.tileDimension + 2 * gridSettings.tilesWide) / 2
+    grid.gridSelector = document.querySelector('#game-grid');
+    grid.gridWidth = (grid.tilesWide * grid.tileDimension + 2 * grid.tilesWide) + 'px';
+    grid.gridHeight = (grid.tilesHigh * grid.tileDimension + 2 * grid.tilesHigh) + 'px';
+    grid.gridSelector.style.width = grid.gridWidth;
+    grid.gridSelector.style.height = grid.gridHeight;
+    modal.modalSelector.style.height = grid.gridWidth;
+    modal.instructionModalSelector.style.height = grid.gridHeight;
+    modal.modalSelector.style.paddingLeft = (screenWidth - grid.tilesWide * grid.tileDimension + 2 * grid.tilesWide) / 2
 }
 
 export {adjustTileSize};

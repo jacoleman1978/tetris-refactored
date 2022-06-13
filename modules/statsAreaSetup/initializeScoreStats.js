@@ -18,4 +18,9 @@ if (localStorage.getItem("high-score") != null) {
     highestScore.setStat(0);
 }
 
-export {currentScore, highestScore, scoreArr};
+const scoreStatSettings = {
+    currentScore: currentScore,
+    highestScore: highestScore
+}
+
+export {scoreStatSettings};

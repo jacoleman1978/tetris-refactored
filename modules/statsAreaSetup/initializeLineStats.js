@@ -21,4 +21,13 @@ lineArr.forEach((item, index) => {
     }
 });
 
-export {oneLineCleared, twoLinesCleared, threeLinesCleared, fourLinesCleared, totalLinesCleared, level, lineArr};
+const lineStatSettings = {
+    oneLineCleared: oneLineCleared,
+    twoLinesCleared: twoLinesCleared,
+    threeLinesCleared: threeLinesCleared,
+    fourLinesCleared: fourLinesCleared,
+    totalLinesCleared: totalLinesCleared,
+    level: level
+}
+
+export {lineStatSettings};

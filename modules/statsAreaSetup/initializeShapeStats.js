@@ -15,4 +15,14 @@ const shapeStatArr = [lineShapeStats, lShapeStats, revLShapeStats, tShapeStats, 
 // Initialize ShapeStats
 shapeStatArr.forEach(item => {item.initialize()});
 
-export {lineShapeStats, lShapeStats, revLShapeStats, tShapeStats, sShapeStats, revSShapeStats, squareShapeStats, shapeStatArr};
+const shapeStatSettings = {
+    lineShapeStats: lineShapeStats,
+    lShapeStats: lShapeStats,
+    revLShapeStats: revLShapeStats,
+    tShapeStats: tShapeStats,
+    sShapeStats: sShapeStats,
+    revSShapeStats: revSShapeStats,
+    squareShapeStats: squareShapeStats
+}
+
+export {shapeStatSettings};
