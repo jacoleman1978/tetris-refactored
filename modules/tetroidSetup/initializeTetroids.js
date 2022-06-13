@@ -15,5 +15,6 @@ export const tetroidTemplates = {
     s: sShape,
     revS: revSShape,
     square: squareShape,
-    array: [lineShape, lShape, revLShape, tShape, sShape, revSShape, squareShape]
+    array: [lineShape, lShape, revLShape, tShape, sShape, revSShape, squareShape],
+    curTemplateId: ''
 }
