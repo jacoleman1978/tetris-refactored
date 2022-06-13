@@ -1,4 +1,4 @@
-import { ShapeStats } from "./shapeStats.js";
+import { ShapeStats } from './shapeStats.js';
 
 // Instantiate all ShapeStats class objects
 const lineShapeStats = new ShapeStats('line-shape', [1, 3, 5, 7]);  
@@ -15,9 +15,7 @@ const shapeStatArr = [lineShapeStats, lShapeStats, revLShapeStats, tShapeStats, 
 // Initialize ShapeStats
 shapeStatArr.forEach(item => {item.initialize()});
 
-const shapeStatSettings = {
-    array: shapeStatArr,
+export const shapeStatSettings = {
+    templates: shapeStatArr,
     generated: 1
 }
-
-export {shapeStatSettings};

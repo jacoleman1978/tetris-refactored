@@ -1,4 +1,4 @@
-import { Scores } from "./scores.js";
+import { Scores } from './scores.js';
 
 // Instantiate all Scores class objects
 const currentScore = new Scores('current-score');
@@ -18,9 +18,7 @@ if (localStorage.getItem("high-score") != null) {
     highestScore.setStat(0);
 }
 
-const scoreStatSettings = {
+export const scoreStatSettings = {
     current: currentScore,
     highest: highestScore
 }
-
-export {scoreStatSettings};

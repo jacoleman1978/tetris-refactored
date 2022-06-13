@@ -1,8 +1,8 @@
-import { Stats } from "./stats.js";
+import { Stats } from './stats.js';
 
 // Extends Stats class for current and highest score
 // Score values will be displayed in the header of the page
-class Scores extends Stats {
+export class Scores extends Stats {
     constructor(htmlId) {
         super(htmlId);
     }
@@ -27,5 +27,3 @@ class Scores extends Stats {
         this.setHighestScore(currentScore, highestScore);
     }
 }
-
-export {Scores};

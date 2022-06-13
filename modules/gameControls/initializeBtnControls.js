@@ -1,7 +1,7 @@
-import {moveLeft} from './moveLeft.js';
-import {moveRight} from './moveRight.js';
-import {rotate} from './rotate.js';
-import {keyListeners} from './keyListeners.js';
+import { moveLeft } from './moveLeft.js';
+import { moveRight } from './moveRight.js';
+import { rotate } from './rotate.js';
+import { keyListeners } from './keyListeners.js';
 
 // Left button listener
 let moveLeftButton = document.querySelector('#move-left');

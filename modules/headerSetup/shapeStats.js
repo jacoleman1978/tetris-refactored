@@ -1,9 +1,9 @@
-import { Stats } from "./stats.js";
+import { Stats } from './stats.js';
 
 // Extends Stats class for how many of a specific tetroid has been spawned
 // The shapes will be displayed in the header of the page
 // The number of each specific shape will be updated when the shape is generated
-class ShapeStats extends Stats {
+export class ShapeStats extends Stats {
     constructor(htmlId, asideTemplate) {
         super(htmlId);
         this.asideTemplate = asideTemplate;
@@ -36,5 +36,3 @@ class ShapeStats extends Stats {
         shapesGenerated += adjustedBy;
     }
 }
-
-export {ShapeStats};

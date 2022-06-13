@@ -10,7 +10,7 @@ const instructionModalContent = document.querySelector(".instruction-modal-conte
 const gameOverSelector = document.querySelector("#game-over-modal")
 const gameOverContentSelector = document.querySelector(".game-over-modal-content")
 
-const modalSettings = {
+export const modalSettings = {
     pause: modalSelector,
     pauseContent: modalContentSelector,
     instruction: instructionModalSelector,
@@ -18,5 +18,3 @@ const modalSettings = {
     gameOver: gameOverSelector,
     gameOverContent: gameOverContentSelector,
 };
-
-export {modalSettings};

@@ -1,8 +1,8 @@
-import { gridSettings as grid} from "./gridSettings.js";
-import { modalSettings as modal} from "../modalsSetup/modalSettings.js";
+import { gridSettings as grid } from './gridSettings.js';
+import { modalSettings as modal } from '../modalsSetup/modalSettings.js';
 
 // Calculates and sets the width and height of playable area in px, including tile borders using the game object
-const adjustTileSize = () => {
+export const adjustTileSize = () => {
     let screenWidth = window.innerWidth;
     let screenHeight = window.innerHeight;
     let statsBanner = document.querySelector('.stats-banner');
@@ -48,5 +48,3 @@ const adjustTileSize = () => {
     modal.instruction.style.height = grid.gridHeight;
     modal.pause.style.paddingLeft = (screenWidth - grid.tilesWide * grid.tileDimension + 2 * grid.tilesWide) / 2
 }
-
-export {adjustTileSize};

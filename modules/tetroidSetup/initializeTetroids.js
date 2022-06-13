@@ -1,4 +1,4 @@
-import { Tetroid } from "./tetroids.js";
+import { Tetroid } from './tetroids.js';
 
 // Instantiate all members of Tetroid class
 const lineShape = new Tetroid(0, 'blue', [0, 1, 2, 3], [2, 12, 22, 32], [0, 1, 2, 3], [2, 12, 22, 32]);
@@ -9,7 +9,7 @@ const sShape = new Tetroid(4, 'violet', [2, 3, 11, 12], [1, 11, 12, 22], [2, 3, 
 const revSShape = new Tetroid(5, 'darksalmon', [1, 2, 12, 13], [2, 11, 12, 21], [1, 2, 12, 13], [2, 11, 12, 21]);
 const squareShape = new Tetroid(6, 'greenyellow', [1, 2, 11, 12], [1, 2, 11, 12], [1, 2, 11, 12], [1, 2, 11, 12]);
 
-export const tetroidTemplates = {
-    array: [lineShape, lShape, revLShape, tShape, sShape, revSShape, squareShape],
+export const tetroidSettings = {
+    templates: [lineShape, lShape, revLShape, tShape, sShape, revSShape, squareShape],
     curTemplateId: ''
 }

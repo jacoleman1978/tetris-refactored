@@ -1,9 +1,9 @@
-import {gridSettings as grid} from '../gameAreaSetup/gridSettings.js';
-import {gameOver} from '../gameAreaCleanup/gameOver.js';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
+import { gameOver } from '../gameAreaCleanup/gameOver.js';
 
 // Class for each individual tetroid shape and rotational orientation
 // There is a maximum of 4 rotational orientations for each shape, so each shape needs 4 versions passed in
-class Tetroid {
+export class Tetroid {
     constructor(templateId, color, orientation0, orientation1, orientation2, orientation3) {
         this.id = templateId;
         this.color = color;
@@ -126,5 +126,3 @@ class Tetroid {
         })
     }
 }
-
-export {Tetroid};

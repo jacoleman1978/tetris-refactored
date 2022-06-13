@@ -1,7 +1,7 @@
-import { Stats } from "./stats.js";
+import { Stats } from './stats.js';
 
 // Extend Stats class for number of lines cleared and current Level
-class LineStats extends Stats {
+export class LineStats extends Stats {
     constructor(htmlId) {
         super(htmlId);
     }
@@ -16,5 +16,3 @@ class LineStats extends Stats {
         fallInterval.current = fallInterval.initial * Math.pow(0.85, (level.stat - 1));
     }
 }
-
-export {LineStats};

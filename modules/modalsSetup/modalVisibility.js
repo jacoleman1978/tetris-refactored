@@ -1,7 +1,7 @@
-import { modalSettings as modal } from "./modalSettings.js";
-import { gridSettings as grid } from "../gameAreaSetup/gridSettings.js";
-import { gameSettings as game } from "../gameAreaSetup/gameSettings.js";
-import { buttonControls } from "../gameControls/initializeBtnControls.js";
+import { modalSettings as modal } from './modalSettings.js';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
+import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
+import { buttonControls } from '../gameControls/initializeBtnControls.js';
 
 // Display modal
 export const showModal = (modalSelector, modalCloseSelector, pause = false) => {

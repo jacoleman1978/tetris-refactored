@@ -1,6 +1,6 @@
-import {moveLeft} from './moveLeft.js';
-import {moveRight} from './moveRight.js';
-import {rotate} from './rotate.js';
+import { moveLeft } from './moveLeft.js';
+import { moveRight } from './moveRight.js';
+import { rotate } from './rotate.js';
 
 export const keyListeners = (event) => {
     // Press left arrow to move tetroid left

@@ -1,4 +1,4 @@
-import { LineStats } from "./lineStats.js";
+import { LineStats } from './lineStats.js';
 
 // Initialize all LineStat class objects
 const oneLineCleared = new LineStats('one-line');
@@ -17,9 +17,7 @@ lineArr.forEach((item) => {
 
 level.setStat(1);
 
-const lineStatSettings = {
+export const lineStatSettings = {
     array: lineArr,
     level: level
 }
-
-export {lineStatSettings};

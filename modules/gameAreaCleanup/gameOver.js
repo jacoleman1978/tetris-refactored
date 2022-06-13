@@ -1,8 +1,8 @@
-import {gameSettings as game} from '../gameAreaSetup/gameSettings.js';
-import {scoreStatSettings as score} from '../headerSetup/initializeScoreStats.js';
-import {lineStatSettings as lines} from '../headerSetup/initializeLineStats.js';
-import {gridSettings as grid} from '../gameAreaSetup/gridSettings.js';
-import {shapeStatSettings as shapes} from '../headerSetup/initializeShapeStats.js';
+import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
+import { scoreStatSettings as score } from '../headerSetup/initializeScoreStats.js';
+import { lineStatSettings as lines } from '../headerSetup/initializeLineStats.js';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
+import { shapeStatSettings as shapes } from '../headerSetup/initializeShapeStats.js';
 
 // Ends the game
 export const gameOver = () => {
@@ -27,5 +27,5 @@ export const gameOver = () => {
     lines.array.forEach(item => {item.setStat(0)});
     lines.level.setStat(1);
     score.current.setStat(0);
-    shapes.array.forEach(item => {item.setStat(0)});
+    shapes.templates.forEach(item => {item.setStat(0)});
 }

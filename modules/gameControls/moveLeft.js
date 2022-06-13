@@ -1,5 +1,5 @@
-import { tetroidTemplates as tetroid } from "../tetroidSetup/initializeTetroids.js";
-import {gridSettings as grid} from "../gameAreaSetup/gridSettings.js";
+import { tetroidTemplates as tetroid } from '../tetroidSetup/initializeTetroids.js';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 
 // Logic for arrow and button to move left
 export const moveLeft = () => {

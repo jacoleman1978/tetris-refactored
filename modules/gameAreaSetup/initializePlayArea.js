@@ -1,7 +1,7 @@
-import { gridSettings as grid} from "./gridSettings.js";
-import { adjustTileSize } from "./adjustTileSize.js";
+import { gridSettings as grid } from './gridSettings.js';
+import { adjustTileSize } from './adjustTileSize.js';
 
-const initializePlayArea = () => {
+export const initializePlayArea = () => {
     adjustTileSize();
     // Instantiates all game tiles and adds to the tileArr
     for(let i = 0; i < grid.tilesWide * grid.tilesHigh; i++) {
@@ -29,5 +29,3 @@ const initializePlayArea = () => {
         })
     }) 
 }
-
-export {initializePlayArea};

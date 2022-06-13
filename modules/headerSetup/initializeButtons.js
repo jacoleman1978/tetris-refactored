@@ -1,6 +1,6 @@
 import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
 import { modalSettings as modal } from '../modalsSetup/modalSettings.js';
-import {resetGame} from '../gameAreaCleanup/resetGame.js';
+import { resetGame } from '../gameAreaCleanup/resetGame.js';
 import { buttonControls } from '../gameControls/initializeBtnControls.js';
 
 export const initializeHeaderButtons = () => {
