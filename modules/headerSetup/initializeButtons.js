@@ -2,6 +2,7 @@ import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
 import { modalSettings as modal } from '../modalsSetup/modalSettings.js';
 import { resetGame } from '../gameAreaCleanup/resetGame.js';
 import { buttonControls } from '../gameControls/initializeBtnControls.js';
+import { showModal } from '../modalsSetup/modalVisibility.js';
 import { playGame } from '../gameActions/playGame.js';
 
 export const initializeHeaderButtons = () => {

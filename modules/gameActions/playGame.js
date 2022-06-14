@@ -1,10 +1,10 @@
-import { generateShape } from '../tetroidSetup/generateShape';
-import { canClearRow } from './canClearRow';
-import { moveRowsDown } from './moveRowsDown';
-import { updateScoreStats } from './updateScoreStats';
-import { shapeStatSettings as shapes } from '../headerSetup/initializeShapeStats';
-import { tetroidSettings as tetroids } from '../tetroidSetup/initializeTetroids';
-import { gridSettings as grid } from '../gameAreaSetup/gridSettings';
+import { generateShape } from '../tetroidSetup/generateShape.js';
+import { canClearRow } from './canClearRow.js';
+import { moveRowsDown } from './moveRowsDown.js';
+import { updateScoreStats } from './updateScoreStats.js';
+import { shapeStatSettings as shapes } from '../headerSetup/initializeShapeStats.js';
+import { tetroidSettings as tetroids } from '../tetroidSetup/initializeTetroids.js';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 
 export const playGame = () => {
     // Starts the game on the first turn by generating a shape and displaying it

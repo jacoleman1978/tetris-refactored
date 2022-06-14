@@ -1,4 +1,4 @@
-import { gridSettings as grid } from '../gameAreaSetup/gridSettings';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 
 // Checks if all tiles in a row are occupied by checking the background color
 // rowNum is 0 through game.tilesHigh 

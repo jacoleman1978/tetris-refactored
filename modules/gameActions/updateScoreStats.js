@@ -1,5 +1,5 @@
-import { scoreStatSettings as score } from '../headerSetup/initializeScoreStats';
-import { lineStatSettings as lines } from '../headerSetup/initializeLineStats';
+import { scoreStatSettings as score } from '../headerSetup/initializeScoreStats.js';
+import { lineStatSettings as lines } from '../headerSetup/initializeLineStats.js';
 
 // Updates the score and score stats based on the number of rows cleared in that drop of a shape
 export const updateScoreStats = (numRowsCleared) => {

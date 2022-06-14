@@ -1,4 +1,4 @@
-import { tetroidTemplates as tetroids } from './initializeTetroids.js';
+import { tetroidSettings as tetroids } from './initializeTetroids.js';
 import { shapeStatSettings as shapes } from '../headerSetup/initializeShapeStats.js';
 
 // Randomly selects next tetroid to appear
