@@ -9,8 +9,8 @@ export class LineStats extends Stats {
         this.setStat(this.getStat() + adjustedBy)
 
         // The level is equal to 1 plus every 10 lines that have been cleared
-        level.setStat(1 + Math.floor(totalLinesCleared.stat / 10));
-        level.displaySelector.textContent = level.stat;
+        level.setStat(1 + Math.floor(totalLinesCleared.getStat() / 10));
+        level.displaySelector.textContent = level.getStat();
 
         // Set the fall rate to the number of ms equal to the the initial value times 85% for each additional level beyond the first
         fallInterval.current = fallInterval.initial * Math.pow(0.85, (level.stat - 1));

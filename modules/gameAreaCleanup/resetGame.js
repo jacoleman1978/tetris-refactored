@@ -12,14 +12,14 @@ export const resetGame = () => {
     clearInterval(game.gravity);
     game.fallInterval.current = game.fallInterval.initial;
     for (let i = 0; i < grid.tilesWide * grid.tilesHigh; i++) {
-        game.tileArr[i].style.backgroundColor = 'black';
+        grid.tileArr[i].style.backgroundColor = 'black';
     }
     for(let i = 0; i < grid.tilesHigh; i++) {
         grid.filledSqInRow[i] = 0;
     }
     shapes.shapesGenerated = 1;
-    lines.array.forEach(item => {item.reset()});
-    lines.level.update(0);
+    lines.array.forEach(item => {item.setStat(0)});
+    lines.level.setStat(1);
     score.current.setStat(0);
-    shapes.templates.forEach(item => {item.reset()});
+    shapes.templates.forEach(item => {item.setStat(0)});
 }
