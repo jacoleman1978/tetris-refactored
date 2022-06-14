@@ -10,7 +10,7 @@ export const rotate = (direction) => {
     let isRightSide = false;
     let isOffBottom = false;
     let isNextTileOccupied = false;
-    let curTetroid = tetroid.array[tetroid.curTemplateId];
+    let curTetroid = tetroid.templates[tetroid.curTemplateId];
     let nextRot = curTetroid.nextRotation(direction);
 
     nextRot.forEach((tilePos) => {
@@ -39,6 +39,6 @@ export const rotate = (direction) => {
     
     // If the flag is true, then the shape can rotate
     if (canShift) {
-        tetroid.array[tetroid.curTemplateId].rotateTetroid(direction);
+        tetroid.templates[tetroid.curTemplateId].rotateTetroid(direction);
     }
 }

@@ -3,20 +3,20 @@ import { canClearRow } from './canClearRow.js';
 import { moveRowsDown } from './moveRowsDown.js';
 import { updateScoreStats } from './updateScoreStats.js';
 import { shapeStatSettings as shapes } from '../headerSetup/initializeShapeStats.js';
-import { tetroidSettings as tetroids } from '../tetroidSetup/initializeTetroids.js';
+import { tetroidSettings as tetroid } from '../tetroidSetup/initializeTetroids.js';
 import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 
 export const playGame = () => {
     // Starts the game on the first turn by generating a shape and displaying it
     if (shapes.generated == 1) {
         generateShape();
-        let curTetroid = shapes.templates[tetroids.curTemplateId];
+        let curTetroid = tetroid.templates[tetroid.curTemplateId];
         curTetroid.updatePos();
     }
     // After the first shape of the game is generated do the following
     else {
         // Determine what shapeTemplate is being used and determine if is is valid to move the shape down one row
-        let curTetroid = shapes.templates[tetroids.curTemplateId];
+        let curTetroid = tetroid.templates[tetroid.curTemplateId];
         let canShift = curTetroid.canMoveTetroid(10);
 
         // If the shape isn't newly generated and it can be shifted, then update the position
