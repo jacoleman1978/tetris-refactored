@@ -21,6 +21,7 @@ export class Scores extends Stats {
 
         if (newScore > highest) {
             highestScore.setStat(newScore);
+            localStorage.setItem("highScore", newScore)
         }
     }
 }
