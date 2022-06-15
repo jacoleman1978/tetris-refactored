@@ -6,16 +6,16 @@ export class Stats {
         this.stat = 0;
     }
 
+    setDisplay(value) {
+        this.displaySelector.textContent = value;
+    }
+
     getStat() {
         return this.stat;
     }
 
     setStat(stat) {
         this.stat = stat;
-        this.displaySelector.textContent = this.stat;
-    }
-
-    setDisplay(value) {
-        this.displaySelector.textContent = value;
+        this.setDisplay(this.stat);
     }
 }
