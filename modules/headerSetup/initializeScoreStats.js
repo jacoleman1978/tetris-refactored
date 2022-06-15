@@ -11,9 +11,9 @@ const scoreArr = [currentScore, highestScore];
 currentScore.setStat(0);
 
 // Use the highest score stored in local storage, otherwise set highestScore to 0
-if (localStorage.getItem("high-score") != null) {
-    highestScore.stat = localStorage.getItem("high-score");
-    highestScore.updateHighScoreDisplay(scoreArr, highestScore);
+if (localStorage.getItem("highScore") != null) {
+    highestScore.setStat(localStorage.getItem("highScore"));
+    highestScore.setHighestScore(currentScore, highestScore);
 } else {
     highestScore.setStat(0);
 }

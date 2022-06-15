@@ -1,7 +1,7 @@
 import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 import { scoreStatSettings as score } from '../headerSetup/initializeScoreStats.js';
 import { lineStatSettings as lines } from '../headerSetup/initializeLineStats.js';
-import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 import { shapeStatSettings as shapes } from '../headerSetup/initializeShapeStats.js';
 
 export const resetGame = () => {

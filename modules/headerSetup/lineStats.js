@@ -13,6 +13,6 @@ export class LineStats extends Stats {
         level.displaySelector.textContent = level.getStat();
 
         // Set the fall rate to the number of ms equal to the the initial value times 85% for each additional level beyond the first
-        fallInterval.current = fallInterval.initial * Math.pow(0.85, (level.stat - 1));
+        fallInterval.current = fallInterval.initial * Math.pow(0.85, (level.getStat() - 1));
     }
 }

@@ -14,4 +14,8 @@ export class Stats {
         this.stat = stat;
         this.displaySelector.textContent = this.stat;
     }
+
+    setDisplay(value) {
+        this.displaySelector.textContent = value;
+    }
 }

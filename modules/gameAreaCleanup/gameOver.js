@@ -1,8 +1,9 @@
 import { gameSettings as game } from '../gameAreaSetup/gameSettings.js';
+import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 import { scoreStatSettings as score } from '../headerSetup/initializeScoreStats.js';
 import { lineStatSettings as lines } from '../headerSetup/initializeLineStats.js';
-import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 import { shapeStatSettings as shapes } from '../headerSetup/initializeShapeStats.js';
+import { showModal } from '../modalsSetup/modalVisibility.js';
 
 // Ends the game
 export const gameOver = () => {
@@ -18,7 +19,7 @@ export const gameOver = () => {
     grid.tileArr.forEach((_value, index) => {
         grid.tileArr[index].style.backgroundColor = 'black';
     })
-    showModal(document.querySelector("#game-over-modal"),document.querySelector(".game-over-modal-close"));
+    showModal(document.querySelector("#game-over-modal"), document.querySelector(".game-over-modal-close"));
     game.fallInterval.current = game.fallInterval.initial;
     for (let i = 0; i < grid.tilesWide * grid.tilesHigh; i++) {
         grid.tileArr[i].style.backgroundColor = 'black';
