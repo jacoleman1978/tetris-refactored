@@ -15,10 +15,12 @@ export class Scores extends Stats {
         // 4 lines = 520 + 20 / level
         let highest = highestScore.getStat();
         
+        // Add the score for the just completed line(s) to the current score
         let newScore = currentScore.getStat() + parseInt(100 * linesClearedThisMove * (1 + (linesClearedThisMove - 1) * 0.1 + 0.05 * level.getStat()));
 
         currentScore.setStat(newScore);
 
+        // Check if there is a new high score. If there is update it and save in local storage
         if (newScore > highest) {
             highestScore.setStat(newScore);
             localStorage.setItem("highScore", newScore)

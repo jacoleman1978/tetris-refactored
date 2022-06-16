@@ -7,10 +7,13 @@ export class LineStats extends Stats {
     }
 
     update(adjustedBy, level, totalLinesCleared, fallInterval) {
+        // Update the counter for line type stat by 1
         this.setStat(this.getStat() + adjustedBy);
 
+        // Recalculate the level
         let calcLevel = 1 + Math.floor(totalLinesCleared.getStat() / 10);
 
+        // If the level has changed, update new level stat and that fall rate
         if (calcLevel !== level.getStat()) {
             level.setStat(calcLevel);
 

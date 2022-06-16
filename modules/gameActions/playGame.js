@@ -8,7 +8,7 @@ import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
 
 export const playGame = () => {
     // Starts the game on the first turn by generating a shape and displaying it
-    if (shapes.generated == 1) {
+    if (shapes.generated == 0) {
         generateShape();
         let curTetroid = tetroid.templates[tetroid.curTemplateId];
         curTetroid.updatePos();

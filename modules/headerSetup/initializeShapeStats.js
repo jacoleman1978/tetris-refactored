@@ -17,5 +17,5 @@ shapeStatArr.forEach(item => {item.initialize()});
 
 export const shapeStatSettings = {
     templates: shapeStatArr,
-    generated: 1
+    generated: 0
 }
