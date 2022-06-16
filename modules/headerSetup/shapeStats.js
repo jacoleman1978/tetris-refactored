@@ -27,13 +27,12 @@ export class ShapeStats extends Stats {
             newDiv.append(gridTile);
         }
         this.displaySelector.id = this.htmlId;
-        this.displaySelector.textContent = this.getStat();
+        this.setDisplay(this.getStat());
         this.outerDisplaySelector.append(newDiv, this.displaySelector);
         this.containerSelector.append(this.outerDisplaySelector);
     }
-    update(adjustedBy, shapesGenerated) {
-        this.setStat(this.getStat() + adjustedBy)
-        this.displaySelector.textContent = this.getStat();
-        shapes.generated += adjustedBy;
+    update(shapesObj) {
+        this.setStat(this.getStat() + 1);
+        shapesObj.generated += 1;
     }
 }

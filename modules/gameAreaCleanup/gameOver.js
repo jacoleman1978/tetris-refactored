@@ -8,8 +8,6 @@ import { showModal } from '../modalsSetup/modalVisibility.js';
 // Ends the game
 export const gameOver = () => {
     game.gameOver = true;
-    score.current.setHighestScore(score.current, score.highest);
-    localStorage.setItem("highScore", score.highest.getStat())
     clearInterval(game.gravity);
     game.pauseFlag = true;
     document.querySelector("#game-score").textContent = score.current.getStat();
