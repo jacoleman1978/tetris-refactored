@@ -10,27 +10,19 @@ export const playGame = () => {
     // Starts the game on the first turn by generating a shape and displaying it
     if (shapes.generated == 0) {
         generateShape();
+    } else {
+        // Determine what shapeTemplate is being used and if it is valid to move the shape down one row
         let curTetroid = tetroid.templates[tetroid.curTemplateId];
-        curTetroid.updatePos();
-    }
-    // After the first shape of the game is generated do the following
-    else {
-        // Determine what shapeTemplate is being used and determine if is is valid to move the shape down one row
-        let curTetroid = tetroid.templates[tetroid.curTemplateId];
-        let canShift = curTetroid.canMoveTetroid(10);
+        curTetroid.shiftBy = 10;
+        let canShift = curTetroid.isPositionValid(curTetroid.curPosTiles);
 
         // If the shape isn't newly generated and it can be shifted, then update the position
         if(canShift) {
-            curTetroid.curPosTiles = curTetroid.nextPosTiles.slice();
-            curTetroid.updatePos();
+            curTetroid.moveTetroid('down');
         }
         // If the shape can NOT be shifted...
         else {
             let numRowsCleared = 0;
-            // Set the shape that is in its final position to be gray
-            curTetroid.curPosTiles.forEach(tilePos => {
-                grid.tileArr[tilePos].style.backgroundColor = 'gray';
-            })
 
             // Check if the row is full, can be cleared, shifting the rows down
             curTetroid.curPosTiles.forEach(tilePos => {

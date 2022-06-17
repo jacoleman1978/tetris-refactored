@@ -7,122 +7,174 @@ export class Tetroid {
     constructor(templateId, color, orientation0, orientation1, orientation2, orientation3) {
         this.id = templateId;
         this.color = color;
-        this.vers0 = orientation0;
-        this.vers1 = orientation1;
-        this.vers2 = orientation2;
-        this.vers3 = orientation3;
+        this.templates = [orientation0, orientation1, orientation2, orientation3];
         this.curOrientation = 0;
-        this.curPosTiles = this.vers0.slice();
+        this.curPosTiles = this.templates[0].slice();
         this.nextPosTiles = [];
         this.nextRotationTiles = [];
-    }
-    
-    // Checks next position tiles before spawning or moving tetroid
-    canMoveTetroid(shiftBy) {
-        let canShift = true;
-        this.nextPosTiles = this.curPosTiles.slice();
-        this.curPosTiles.forEach((tilePos, index) => {
-            let shiftedTilePos = tilePos + shiftBy;
-            if (shiftedTilePos < grid.tilesWide * grid.tilesHigh) {
-                if (grid.tileArr[shiftedTilePos].style.backgroundColor != 'gray') {
-                    this.nextPosTiles[index] = shiftedTilePos;
-                }
-                else {
-                    this.nextPosTiles = this.curPosTiles.slice();
-                    canShift = false;
-                }
-            }
-            else {
-                this.nextPosTiles = this.curPosTiles.slice();
-                canShift = false;
-            }   
-        })
-        if (canShift) {
-            this.curPosTiles.forEach((_tilePos, index) => {
-                grid.tileArr[this.curPosTiles[index]].style.backgroundColor = 'black';
-            })
-        }
-        return canShift;
+        this.shiftBy = 0;
     }
 
-    // Creates each new tetroid, shifting the base template to the middle columns
+    setOrientation(orientationNum) {
+        this.curOrientation = orientationNum;
+    }
+    
+    // Checks if the position is valid, returning a boolean
+    isPositionValid(tilePosTemplate) {
+        let canMove = true;
+        let positions = new Set(tilePosTemplate)
+
+        // Checks each newPosition to determine if it is already occupied
+        this.nextPosTiles = tilePosTemplate.map(position => {
+            let newPosition = position + this.shiftBy;
+
+            if (newPosition < grid.tilesWide * grid.tilesHigh) {
+                if (positions.has(newPosition) == false && grid.tileArr[newPosition].style.backgroundColor != 'black') {
+                    canMove = false;
+                }
+            } else {
+                canMove = false;
+            }
+            
+            return newPosition
+        });
+        return canMove
+    }
+
+    // Creates each new tetroid if not a gameOver scenario
     initialPos() {
-        this.curOrientation = 0;
-        let shiftBy = 3;
-        this.curPosTiles = this.vers0.slice(); 
-        if(this.canMoveTetroid(shiftBy)) {
-            this.curPosTiles = this.vers0.slice();
-            this.curPosTiles.forEach((tilePos, index) => {
-                this.curPosTiles[index] = tilePos + shiftBy;
-                grid.tileArr[tilePos + shiftBy].style.backgroundColor = this.color;
-            })
-        }
-        else {
-            this.curPosTiles = this.vers0.slice();
-            this.curPosTiles.forEach((tilePos, index) => {
-                this.curPosTiles[index] = tilePos + shiftBy;
-                grid.tileArr[tilePos + shiftBy].style.backgroundColor = this.color;
-            })
+        let canPlace = true;
+        this.setOrientation(0);
+        this.shiftBy = 0;
+        this.curPosTiles = this.templates[0].slice();
+
+        this.curPosTiles.forEach(position => {
+            if (grid.tileArr[position].style.backgroundColor != 'black') {
+                canPlace = false;
+            }
+        })
+
+        if (canPlace == true) {
+            this.updateColor(this.curPosTiles, this.color);
+        } else {
             gameOver();
         }
     }
-    
-    // Updates position of tetroid by arrow keys and gravity
-    updatePos() {
-        this.nextPosTiles.forEach((tilePos, index) => {
-            this.curPosTiles[index] = tilePos;
-            grid.tileArr[tilePos].style.backgroundColor = this.color;
-        })
+
+    // Sets all tiles in the given template to the color given
+    updateColor(tilePosTemplate, color) {
+        tilePosTemplate.forEach(position => {
+            grid.tileArr[position].style.backgroundColor = color;
+        });
     }
 
-    // Selects a rotational orientation of the tetroid
-    getVersion(versionNumber) {
-        if (versionNumber == 0) {return this.vers0.slice();}
-        else if (versionNumber == 1) {return this.vers1.slice();}
-        else if (versionNumber == 2) {return this.vers2.slice();}
-        else if (versionNumber == 3) {return this.vers3.slice();}
-    }
-
-    // Creates array of next rotation
-    nextRotation(direction) {
-        let currentVers = this.curOrientation;
-        let shiftBy = this.curPosTiles[0] - this.getVersion(currentVers)[0];
-        if (direction == "CW") {currentVers += 1;}
-        else {
-            // Choose previous version so can rotate "CCW"
-            currentVers -= 1;
-            if (currentVers < 0) {currentVers = 3;}
+    // Checks whether tetroid is on 'left' or 'right' edge of the game area, setting this.shiftBy to an appropriate value and returning a boolean.
+    // Returns false for the other directions (being on edge doesn't matter), setting this.shiftBy to an appropriate value
+    // direction can be: 'left', 'right', 'down'
+    isOnEdge(direction) {
+        if (direction === 'down') {
+            this.shiftBy = 10;
+            return false
         }
         
-        currentVers = currentVers % 4;
-        let currentVersTiles = this.getVersion(currentVers);
+        let edgeTile = 0;
+        let onEdge = false;
 
-        currentVersTiles.forEach((tilePos, index) => {
-            this.nextRotationTiles[index] = tilePos + shiftBy;
-        })
-        return this.nextRotationTiles.slice();
-    }
-
-    // Rotates tetroid around a fixed point
-    rotateTetroid(direction) {
-        this.curPosTiles.forEach((tilePos) => {
-            grid.tileArr[tilePos].style.backgroundColor = 'black';
-        })
-
-        let shiftBy = this.curPosTiles[0] - this.getVersion(this.curOrientation)[0];
-        if (direction == "CW") {this.curOrientation += 1;}
-        else {
-            // Choose previous version so can rotate "CCW"
-            this.curOrientation -= 1;
-            if (this.curOrientation < 0) {this.curOrientation = 3}
+        if (direction === 'left') {
+            edgeTile = 0;
+            this.shiftBy = -1;
+        } else if (direction === 'right') {
+            edgeTile = 9;
+            this.shiftBy = 1;
         }
         
-        this.curOrientation = this.curOrientation % 4;
-        this.curPosTiles = this.getVersion(this.curOrientation);
-
-        this.curPosTiles.forEach((tilePos, index) => {
-            this.curPosTiles[index] = tilePos + shiftBy;
-            grid.tileArr[this.curPosTiles[index]].style.backgroundColor = this.color;
+        this.curPosTiles.forEach(position => {
+            if (position % 10 == edgeTile) {
+                onEdge = true
+            }
         })
+
+        if (direction === 'left' || direction === 'right') {
+            return onEdge
+        } else {
+            return true
+        }
+
+    }
+
+    // Returns the next rotation orientation
+    getNextRotationOrientation(direction) {
+        let orientation = this.curOrientation;
+        let nextTemplate = [];
+        let shiftBy = this.curPosTiles[0] - this.templates[orientation % 4][0];
+
+        if (direction === 'CW') {
+            orientation += 1;
+            nextTemplate = this.templates[orientation % 4].slice();
+        } else if (direction === 'CCW') {
+            orientation -= 1;
+            if (orientation < 0) {
+                orientation = 3;
+                nextTemplate = this.templates[orientation].slice();
+            } else {
+                nextTemplate = this.templates[orientation % 4].slice();
+            }
+        }
+
+        this.nextRotationTiles = nextTemplate.map(position => {
+            return position + shiftBy
+        })
+
+        return orientation
+    }
+
+    // Checks if the rotation orientation would cause the shape to split, parts appearing on both sides of the game grid
+    isRotationWrapping() {
+        let onLeftEdge = false;
+        let onRightEdge = false;
+
+        this.nextRotationTiles.forEach(position => {
+            if (position % 10 == 0) {
+                onLeftEdge = true;
+            }
+            if (position % 10 == 9) {
+                onRightEdge = true;
+            }
+        })
+
+        if (onLeftEdge == true && onRightEdge == true) {
+            return true
+        } else {
+            return false
+        }
+    }
+
+    // Move tetroid if possible
+    // Direction can be: 'left', 'right', 'down', 'CW', 'CCW'
+    moveTetroid(direction) {
+        let canMove = false;
+
+        if (direction === 'down' || direction === 'left' || direction === 'right') {
+            if (this.isOnEdge(direction) == false && this.isPositionValid(this.curPosTiles) == true) {
+                canMove = true;
+            }
+        } else if (direction === 'CW' || direction === 'CCW') {
+            let orientation = this.getNextRotationOrientation(direction);
+            this.shiftBy = 0;
+
+            if (this.isRotationWrapping() == false && this.isPositionValid(this.nextRotationTiles) == true) {
+                canMove = true;
+            }
+
+            if (canMove == true) {
+                this.setOrientation(orientation);
+            }
+        }
+
+        if (canMove == true) {
+            this.updateColor(this.curPosTiles, 'black');
+            this.updateColor(this.nextPosTiles, this.color);
+            this.curPosTiles = this.nextPosTiles.slice();
+        }
     }
 }
