@@ -1,4 +1,5 @@
 import { gridSettings as grid } from '../gameAreaSetup/gridSettings.js';
+import { gameSettings as game} from '../gameAreaSetup/gameSettings.js';
 import { gameOver } from '../gameAreaCleanup/gameOver.js';
 
 // Class for each individual tetroid shape and rotational orientation
@@ -56,7 +57,7 @@ export class Tetroid {
 
         if (canPlace == true) {
             this.updateColor(this.curPosTiles, this.color);
-        } else {
+        } else if (game.gameOver == false) {
             gameOver();
         }
     }
@@ -99,7 +100,6 @@ export class Tetroid {
         } else {
             return true
         }
-
     }
 
     // Returns the next rotation orientation

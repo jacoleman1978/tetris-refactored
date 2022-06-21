@@ -51,5 +51,8 @@ export const adjustTileSize = () => {
     grid.gridSelector.style.height = grid.gridHeight;
     modal.pause.style.height = grid.gridWidth;
     modal.instruction.style.height = grid.gridHeight;
-    modal.pause.style.paddingLeft = (screenWidth - grid.tilesWide * grid.tileDimension + 2 * grid.tilesWide) / 2
+    modal.pause.style.paddingLeft = (screenWidth - grid.tilesWide * grid.tileDimension + 2 * grid.tilesWide) / 2;
+    document.querySelector('.modal').style.height = grid.gridHeight;
+    document.querySelector('img').style.height = grid.gridHeight;
+
 }

@@ -14,7 +14,7 @@
         <div class="buttons">
             <button id="new-game">New Game</button>
             <button id="instructions">Instructions</button>
-            <button id="play-pause">Play / Pause</button>
+            <button id="play-pause">Pause / Unpause</button>
         </div>
         <div class="score-banner">
             <div>High Score: <span id="high-score"></span></div>
@@ -35,6 +35,7 @@
     <aside>
         <button id="rotate-CCW" class="oval"><i class="fas fa-undo"></i></button>
         <button id="move-left" class="oval"><i class="fas fa-arrow-left"></i></button>
+        <button class="oval move-down"><i class="fa-solid fa-arrow-down"></i></button>
     </aside>
     <main class="game-area">
         <div id="game-grid"></div>
@@ -42,9 +43,10 @@
     <aside>
         <button id="rotate-CW" class="oval"><i class="fas fa-redo"></i></button>
         <button id="move-right" class="oval"><i class="fas fa-arrow-right"></i></button>
+        <button class="oval move-down"><i class="fa-solid fa-arrow-down"></i></button>
     </aside>
     <div id="pause-modal" class="modal">
-        <div class="pause-modal-content modal-content">
+        <div id="pause-modal-content" class="modal-content">
             <div class="modal-header">
                 <h1>Paused</h1>
                 <span class="pause-modal-close close">&times;</span>
@@ -53,7 +55,7 @@
         </div>
     </div>
     <div id="instruction-modal" class="modal">
-        <div class="instruction-modal-content modal-content">
+        <div id="instruction-modal-content" class="modal-content">
             <div class="modal-header">
                 <h1>About the game</h1>
                 <span class="instruction-modal-close close">&times;</span>
@@ -72,7 +74,7 @@
         </div>
     </div>
     <div id="game-over-modal" class="modal">
-        <div class="game-over-modal-content modal-content">
+        <div id="game-over-modal-content" class="modal-content">
             <div class="modal-header">
                 <h1>Game Over</h1>
                 <span class="game-over-modal-close close">&times;</span>

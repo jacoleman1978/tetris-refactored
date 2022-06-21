@@ -124,24 +124,21 @@ h4 {
     position: fixed;
     z-index: 1;
     width: 80%;
-    height: 100%;
     padding-bottom: 65px;
     padding-top: 100px;
     padding-left: 10%;
     padding-right: 10%;
     left: 0;
     top: 0;
-   
     background-color: rgb(173, 216, 230);
     background-color: rgba(173, 216, 230, 0.4)
 }
 
 #game-over-modal {
     width: 70%;
-    height: 100%;
     padding-left: 15%;
     padding-right: 15%;
-    padding-top: 50%;
+    height: 100%;
     background-color: rgba(59, 13, 13, 0.8)
 }
 
@@ -157,7 +154,7 @@ h4 {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 10px;
-    border-radius: 3%;
+    
 }
 .image {
     display: flex;
@@ -166,8 +163,6 @@ h4 {
 }
 img {
     width: 300px;
-    height: 300px;
-    margin-top: 10%;
 }
 .close {
     color: black;
