@@ -5,6 +5,7 @@ import { modalSettings as modal } from '../modalsSetup/modalSettings.js';
 export const adjustTileSize = () => {
     // Use browser window settings to get width and height values
     let screenWidth = window.innerWidth;
+    console.log(screenWidth)
     let screenHeight = window.innerHeight;
     let statsBanner = document.querySelector('.stats-banner');
     let shapeStats = document.querySelector('#shape-stats');
@@ -36,11 +37,11 @@ export const adjustTileSize = () => {
     //Checks to determine best tileDimension to maximize playable area
     let checkTileHeight = adjustTileWidth * 15 + 150;
     if (checkTileHeight < screenHeight) {
-        grid.tileDimension = adjustTileWidth;
+        grid.tileDimension = 0.65 * adjustTileWidth;
     }
     else {
         let adjustTileHeight = (screenHeight - 175) / grid.tilesHigh;
-        grid.tileDimension = adjustTileHeight;
+        grid.tileDimension = 0.65 * adjustTileHeight;
     }
 
     // Sets width and height values in px
